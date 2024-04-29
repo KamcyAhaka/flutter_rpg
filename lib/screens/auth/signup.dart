@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_rpg/screens/auth/custom_password.dart';
 import 'package:flutter_rpg/screens/dashboard/dashboard.dart';
 import 'package:flutter_rpg/services/user_store.dart';
 import 'package:flutter_rpg/shared/styled_button.dart';
@@ -146,17 +147,7 @@ class _SignUpState extends State<SignUp> {
 									),
 								),
 								const SizedBox(height: 30),
-								TextField(
-									controller: _passwordController,
-									style: GoogleFonts.kanit(
-										textStyle: Theme.of(context).textTheme.bodyMedium
-									),
-									cursorColor: AppColors.textColor,
-									decoration: const InputDecoration(
-										prefixIcon: Icon(Icons.key),
-										label: StyledText('Password')
-									),
-								),
+								CustomPassword(_passwordController),
 								const SizedBox(height: 50),
 								GestureDetector(
 									onTap: () {
